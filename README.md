@@ -17,7 +17,7 @@ Each lab assignment should have its own folder containing:
 
 | Task | Assignment Title | Status | Submission Folder | Notes |
 |------|------------------|--------|-------------------|-------|
-| Lab 1 | TBD | ⬜ Not Completed | `Lab 1/` | |
+| Lab 1 | Multi-Objective Design Space Exploration of Neural Network Hyperparameters | ✅ Completed | `Lab 1 assignment/` | |
 | Lab 2 | TBD | ⬜ Not Completed | `Lab 2/` | |
 | Lab 3 | TBD | ⬜ Not Completed | `Lab 3/` | |
 | Lab 4 | TBD | ⬜ Not Completed | `Lab 4/` | |
@@ -268,5 +268,5 @@ git push
 
 | Name | Role |
 | ---- | ---- |
-|      |      |
-|      |      |
+| Bahaa ElDin Hassan     |      |
+| Shrouq Mohamed     |      |
