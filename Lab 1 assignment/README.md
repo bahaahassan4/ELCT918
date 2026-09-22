@@ -132,7 +132,12 @@ The second cost metric follows the cost model introduced in the reference paper.
 
 The cost is calculated as:
 
-$$ Cost = (\#Weights \times Weight\ Unit\ Cost) + (\#Multiplications \times Multiplication\ Unit\ Cost) $$
+$$
+Cost =
+(\text{Number of Weights} \times \text{Weight Unit Cost})
++
+(\text{Number of Multiplications} \times \text{Multiplication Unit Cost})
+$$
 
 where:
 
