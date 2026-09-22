@@ -115,11 +115,44 @@ A total of **30 unique configurations** were trained and evaluated.
 
 # Cost Model
 
-The implementation cost of each network is measured using the total number of trainable parameters:
+The implementation cost of each neural network is evaluated using two different cost metrics.
+
+## 1. Parameter Count Cost (Simple Proxy)
+
+The first cost metric uses the total number of trainable parameters as a simple estimation of the hardware implementation cost:
 
 ```python
-Total Parameters = sum(p.numel() for p in model.parameters())
+Total Parameters = sum(p.numel() for p in model.parameters())   
 ````
+This metric represents the network size and the required memory storage for the model weights.
+
+## 2. Hardware-Aware Cost Model
+
+The second cost metric follows the cost model introduced in the reference paper.
+
+The cost is calculated as:
+
+$$ Cost = (\#Weights \times Weight\ Unit\ Cost) + (\#Multiplications \times Multiplication\ Unit\ Cost) $$
+
+where:
+
+- **#Weights** represents the total number of weights in all fully connected layers.
+- **#Multiplications** represents the number of multiplication operations required during inference.
+- **Weight Unit Cost** represents the normalized cost of accessing weights from memory.
+- **Multiplication Unit Cost** represents the normalized computation cost.
+
+The normalized values used are:
+
+- Weight Unit Cost = 139
+- Multiplication Unit Cost = 1
+
+The multiplication cost is normalized to 1 based on the energy cost of a multiply-accumulate operation, while the weight access cost is set to 139 because memory access consumes significantly more energy compared to computation.
+
+Therefore, the hardware-aware cost is calculated as:
+
+Hardware Cost = (Number of Weights × 139) + (Number of Multiplications × 1)
+
+Both cost metrics are applied consistently across all explored architectures and are used to analyze the trade-off between implementation cost and classification accuracy.
 
 Each architecture is evaluated based on two objectives:
 
@@ -153,18 +186,21 @@ The final exploration produced **13 Pareto-optimal configurations**.
 
 The project generates a Pareto-front plot showing the relationship between:
 
-* Neural network cost (number of parameters)
+* Neural network cost (number of parameters/Hardware-Aware Cost)
 * Accuracy drop
 
 The plot can be found here:
 
 ```
 pareto_front.png
+pareto_front_hardwareawarecost.png
 ```
 
 Example:
-
+### For No. of parameters 
 ![Pareto Front](pareto_front.png)
+### For Hardware-aware cost model
+![pareto front hardware-aware cost](pareto_front_hardwareawarecost.png)
 
 ---
 
