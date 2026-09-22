@@ -1,319 +1,272 @@
-# ELCT918 Course — Lab Assignments
+# ELCT918 — Lab Assignments Repository
 
-This repository is the **README and shared workspace for the ELCT918 course**.
+Welcome to the **ELCT918 course lab repository**.
 
-We will use this repository to collect and organize **all lab assignments** for the course.
+This repository is used to collect, organize, and submit all lab assignments for the course.
 
-Each lab assignment should be added to the repository in its own folder, for example:
+Each lab assignment should have its own folder containing:
+- Assignment files
+- Source code (if applicable)
+- Reports
+- Screenshots/results
+- A `README.md` explaining the work
 
-```text
+---
+
+# Course Lab Progress Tracker
+
+| Task | Assignment Title | Status | Submission Folder | Notes |
+|------|------------------|--------|-------------------|-------|
+| Lab 1 | TBD | ⬜ Not Completed | `Lab 1/` | |
+| Lab 2 | TBD | ⬜ Not Completed | `Lab 2/` | |
+| Lab 3 | TBD | ⬜ Not Completed | `Lab 3/` | |
+| Lab 4 | TBD | ⬜ Not Completed | `Lab 4/` | |
+| Lab 5 | TBD | ⬜ Not Completed | `Lab 5/` | |
+
+### Status Legend
+
+| Symbol | Meaning |
+|--------|---------|
+| ✅ | Completed |
+| 🔄 | In Progress |
+| ⬜ | Not Started |
+
+---
+
+# Repository Structure
+
+The repository should follow this structure:
+
+```
+
 ELCT918/
+│
 ├── README.md
+│
 ├── Lab 1/
-│   ├── ...
-│   └── README.md
+│   ├── README.md
+│   ├── source_files/
+│   └── report.pdf
+│
 ├── Lab 2/
-│   ├── ...
-│   └── README.md
+│   ├── README.md
+│   ├── source_files/
+│   └── report.pdf
+│
 ├── Lab 3/
-│   ├── ...
-│   └── README.md
+│   ├── README.md
+│   └── ...
+│
 └── ...
-```
 
-The repository is shared between the course collaborators, so we will use Git branches and Pull Requests when working on assignments.
-
----
-
-# Git Collaboration Workflow
-
-## 1. What does `nothing to commit, working tree clean` mean?
-
-If you run:
-
-```bash
-git commit -m "Adding folder Lab 1 assignment"
-```
-
-and Git shows:
-
-```text
-On branch main
-nothing to commit, working tree clean
-```
-
-this is **not an error**.
-
-It means Git currently does not see any new or modified files that need to be committed.
-
-There are several possible reasons.
-
----
-
-## 2. The files are already committed
-
-Check the Git history:
-
-```bash
-git log --oneline --all
-```
-
-You may see something like:
-
-```text
-a83f21c Initial commit
-```
-
-This means the files may already be included in an earlier commit.
-
-You can also check:
-
-```bash
-git status
 ```
 
 ---
 
-## 3. The folder is empty
+# Lab Submission Guidelines
 
-Git does **not track empty folders**.
+For every lab:
 
-For example:
+1. Create a new folder:
 
-```text
-task1/
-└── Lab 1 assignment/
 ```
 
-If `Lab 1 assignment` contains no files, Git will ignore the folder.
+Lab X/
 
-Add a file inside it, for example:
+```
 
-```text
+2. Add your assignment files.
+
+3. Add a `README.md` inside the lab folder containing:
+
+- Lab objective
+- Tools/software used
+- Implementation steps
+- Results
+- Screenshots (if needed)
+
+Example:
+
+```
+
 Lab 1 assignment/
-└── README.md
-```
+│
+├── README.md
+├── code/
+├── results/
+└── report.pdf
 
-Then run:
-
-```bash
-git status
-git add .
-git commit -m "Add Lab 1 assignment"
-```
+````
 
 ---
 
-## 4. The files are ignored by `.gitignore`
+# GitHub Collaboration Workflow
 
-A `.gitignore` file can tell Git not to track certain files or folders.
+## 1. Clone the Repository
 
-Check ignored files with:
+First time only:
 
 ```bash
-git status --ignored
-```
-
-If your files appear under:
-
-```text
-Ignored files:
-```
-
-then `.gitignore` is preventing Git from tracking them.
+git clone <repository-link>
+cd ELCT918
+````
 
 ---
 
-## 5. The files were already committed
+## 2. Update Your Local Repository
 
-For example, if you previously ran:
-
-```bash
-git add .
-git commit -m "Initial commit"
-```
-
-and then added your Lab 1 files afterward, Git should normally show them as untracked:
-
-```text
-Untracked files:
-  Lab 1 assignment/
-```
-
-Then run:
-
-```bash
-git add .
-git commit -m "Add Lab 1 assignment"
-```
-
----
-
-## 6. What to do when Git does not see your files
-
-Run these two commands:
-
-```bash
-git status
-```
-
-and:
-
-```bash
-git log --oneline --all --decorate -5
-```
-
-### `git status`
-
-Shows:
-
-- Current branch
-- Modified files
-- New/untracked files
-- Staged files
-- Whether the working tree is clean
-
-### `git log`
-
-Shows recent commits in your repository.
-
-For example:
-
-```text
-a83f21c Initial commit
-```
-
----
-
-# Basic Git Workflow for the Project
-
-If you and your colleague are working on the same project, use this workflow.
-
-## Start working
-
-First update your local `main` branch:
+Before starting any work:
 
 ```bash
 git checkout main
 git pull origin main
 ```
 
-Then create your own branch:
-
-```bash
-git checkout -b bahaa-task1
-```
-
-Now make your changes.
+This downloads the latest changes.
 
 ---
 
-## Save your work
+## 3. Create Your Own Branch
 
-Check what changed:
+Do not work directly on `main`.
+
+Create a branch:
+
+```bash
+git checkout -b your-name-task
+```
+
+Example:
+
+```bash
+git checkout -b mahmoud-lab1
+```
+
+---
+
+## 4. Add Your Changes
+
+After finishing your work:
+
+Check changes:
 
 ```bash
 git status
 ```
 
-Add your changes:
+Add files:
 
 ```bash
 git add .
 ```
 
-Commit them:
+Commit:
 
 ```bash
-git commit -m "Implement task 1"
+git commit -m "Add Lab 1 submission"
 ```
-
-Push your branch:
-
-```bash
-git push -u origin bahaa-task1
-```
-
-Then create a **Pull Request** on GitHub:
-
-```text
-bahaa-task1 -> main
-```
-
-After review, the Pull Request can be merged into `main`.
 
 ---
 
-## Start your next task
+## 5. Push Your Branch
 
-After your previous branch has been merged:
+Upload your branch:
 
 ```bash
-git checkout main
-git pull origin main
-git checkout -b bahaa-task2
+git push -u origin your-name-task
 ```
 
-Then continue working.
+Example:
+
+```bash
+git push -u origin mahmoud-lab1
+```
 
 ---
 
-# Recommended Collaboration Structure
+## 6. Create Pull Request
 
-Do not normally work directly on `main`.
+On GitHub:
 
-Use separate branches:
-
-```text
-                  GitHub
-                    |
-                   main
-                  /    \
-                 /      \
-        bahaa-task1   colleague-task1
-             |              |
-            work           work
-             |              |
-           push           push
-             |              |
-            PR             PR
-             \              /
-              \            /
-                   main
+```
+your-branch  →  main
 ```
 
-This allows both people to work simultaneously while reducing the risk of overwriting each other's changes.
+Create a Pull Request.
+
+After review, the changes can be merged into `main`.
 
 ---
 
-# Daily Git Cheat Sheet
+# Useful Git Commands
+
+Check repository status:
 
 ```bash
-# Start working
-git checkout main
-git pull origin main
-git checkout -b my-feature
-
-# Work on the project...
-
-# Save your changes
 git status
-git add .
-git commit -m "Describe my changes"
-git push -u origin my-feature
-
-# Create a Pull Request on GitHub
-
-# After the Pull Request is merged
-git checkout main
-git pull origin main
-
-# Create a new branch for the next task
-git checkout -b my-next-feature
 ```
 
-## Important Rule
+View commit history:
 
-**Avoid working directly on `main`.**
+```bash
+git log --oneline
+```
 
-Use a separate branch for each task or feature, push the branch to GitHub, and use a Pull Request to merge your work into `main`.
+Update repository:
+
+```bash
+git pull origin main
+```
+
+Create a new branch:
+
+```bash
+git checkout -b branch-name
+```
+
+Switch branch:
+
+```bash
+git checkout branch-name
+```
+
+Add changes:
+
+```bash
+git add .
+```
+
+Commit changes:
+
+```bash
+git commit -m "message"
+```
+
+Push changes:
+
+```bash
+git push
+```
+
+---
+
+# Important Rules
+
+✅ Create a separate branch for every lab/task.
+
+✅ Commit changes with clear messages.
+
+✅ Pull the latest `main` before starting new work.
+
+✅ Use Pull Requests to merge changes.
+
+❌ Do not directly modify the `main` branch.
+
+---
+
+# Contributors
+
+| Name | Role |
+| ---- | ---- |
+|      |      |
+|      |      |
