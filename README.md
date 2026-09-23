@@ -139,7 +139,7 @@ git checkout -b your-name-task
 Example:
 
 ```bash
-git checkout -b mahmoud-lab1
+git checkout -b NAME-lab1
 ```
 
 ---
@@ -179,7 +179,7 @@ git push -u origin your-name-task
 Example:
 
 ```bash
-git push -u origin mahmoud-lab1
+git push -u origin NAME-lab1
 ```
 
 ---
