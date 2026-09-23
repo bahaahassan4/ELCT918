@@ -273,7 +273,7 @@ Lab 1 assignment/
 │
 ├── README.md
 │
-├── <notebook_name>.ipynb
+├── Lab_1_Final.ipynb
 │
 └── pareto_front.png
 ```
