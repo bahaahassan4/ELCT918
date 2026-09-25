@@ -175,6 +175,7 @@ print(f"Test images: {len(test_data)}")
 # ------------------------------------------------------------
 # Define the network (parametrized network)
 # ------------------------------------------------------------
+```python
 class parameterized_nn(nn.Module):
     def __init__(self , n , m_array_per_nn , input_size=784 , output_size=10):
 
@@ -204,9 +205,12 @@ class parameterized_nn(nn.Module):
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters())
 
+```
+
 # ------------------------------------------------------------
 ##### Another hardware-aware implementation of the cost  #####
 # ------------------------------------------------------------
+```python
 def hardware_aware_cost(layer_sizes, weight_unit_cost = 139, multiplication_unit_cost = 1):
 
     total_weights = 0
@@ -218,7 +222,7 @@ def hardware_aware_cost(layer_sizes, weight_unit_cost = 139, multiplication_unit
 
     cost = total_weights * weight_unit_cost + total_multiplications * multiplication_unit_cost
     return cost
-
+```
 ##the bounded design space
 n_array = [1,2,3,4,5]
 m_array = [[10],[10,20],[10,20,40],[10,20,40,80],[10,20,40,80,160],[10,20,40,80,160,200]]
