@@ -1,4 +1,4 @@
-# Lab Assignment 2: Comparative Study of Classical CNN Architectures
+# Lab 2: Comparative Study of Classical CNN Architectures
 
 **ELCT918 – Selected Topics in AI Accelerators Hardware Design**
 German University in Cairo (GUC)
