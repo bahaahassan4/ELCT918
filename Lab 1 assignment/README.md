@@ -1,4 +1,4 @@
-# ELCT918 Lab 1 Assignment: Multi-Objective Design Space Exploration of Neural Network Hyperparameters 
+# Lab 1 : Multi-Objective Design Space Exploration of Neural Network Hyperparameters 
 
 This project is developed as part of **ELCT918 — Selected Topics in AI Accelerators Hardware Design** at the **German University in Cairo (GUC)**.
 
