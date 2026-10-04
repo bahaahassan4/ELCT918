@@ -19,8 +19,7 @@ Each lab assignment should have its own folder containing:
 |------|------------------|--------|-------------------|-------|
 | Lab 1 | Multi-Objective Design Space Exploration of Neural Network Hyperparameters | ✅ Completed | `Lab 1 assignment/` | |
 | Lab 2 | Comparative Study of Classical CNN Architectures: LeNet-5, AlexNet, and VGG16 | ✅ Completed | `Lab 2 assignment/` | |
-| Lab 3 | Real-Time Handwritten Digit Recognition: From a Trained CNN to a Webcam OCR
-Pipeline | ✅ Completed | `Lab 3 assignment/` | |
+| Lab 3 | Real-Time Handwritten Digit Recognition: From a Trained CNN to a Webcam OCR Pipeline | ✅ Completed | `Lab 3 assignment/` | |
 | Lab 4 | TBD | ⬜ Not Completed | `Lab 4/` | |
 | Lab 5 | TBD | ⬜ Not Completed | `Lab 5/` | |
 
