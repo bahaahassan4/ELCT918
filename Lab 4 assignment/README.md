@@ -22,8 +22,9 @@ Entered one nibble per enabled clock cycle right after reset, the chip outputs t
 
 | File | Contents |
 |------|----------|
-| `design.sv` | The unchanged `mystery` netlist followed by our `module solution` |
-| `testbench.sv` | Experiments, self-checking comparison of `mystery` vs `solution`, and the password test |
+| `mystery.sv` | The unchanged `mystery` netlist |
+| `solution.sv` | our `module solution` |
+| `tb.sv` | Experiments, self-checking comparison of `mystery` vs `solution`, and the password test |
 | `README.md` | This file |
 
 ## How to run
