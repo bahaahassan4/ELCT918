@@ -11,7 +11,6 @@ German University in Cairo (GUC), Faculty of Information Engineering and Technol
 ---
 
 ## Project Overview
-
 A model that scores well on its test set is not yet a working system. A camera produces images with a different size, colour format, background, lighting and framing from anything the network saw during training. This project closes that gap: it takes the LeNet-5 network from Lab 2, retrains it on handwritten digits, and builds a preprocessing pipeline and a real-time application that recognises digits written on paper and held in front of a webcam.
 
 | Part | What it does |
